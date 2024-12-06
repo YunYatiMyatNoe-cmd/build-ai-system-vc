@@ -82,7 +82,7 @@ const ChatBot = () => {
                     { question },
                     {
                         headers: { 'Content-Type': 'application/json' },
-                        timeout: 100000000, // 5 minutes timeout
+                        timeout: 3000, // 5 minutes timeout
                     }
                 );
                 return response;
