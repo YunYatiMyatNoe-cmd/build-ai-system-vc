@@ -1,25 +1,30 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
+import ResponseAnswer from './ResponseAnswer'; 
+import SampleGraph from './SampleGraph.js';
 
-function App() {
+const App = () => {
+  // State to toggle between Graph and Chat
+  const [isGraph, setIsGraph] = useState(true);
+
+  // Handle button click to toggle between Graph and Chat
+  const handleToggle = () => {
+    setIsGraph(!isGraph); // Toggle the value of isGraph
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app-container">
+      
+      {/* Toggle Button */}
+      <div>
+        <button onClick={handleToggle}>
+          {isGraph ? 'Go to Chat' : 'Go to Graph'}
+        </button>
+      </div>
+
+      {isGraph ? <SampleGraph/> : <ResponseAnswer/>}
     </div>
   );
-}
+};
 
 export default App;
