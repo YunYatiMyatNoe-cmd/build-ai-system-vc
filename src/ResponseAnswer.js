@@ -7,7 +7,7 @@ const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecogni
 
 const ChatBot = () => {
     const [messages, setMessages] = useState([
-        { text: 'こんばんは！！ご用件は何でしょうか？', sender: 'bot' },
+        { text: 'two！！ご用件は何でしょうか？', sender: 'bot' },
     ]);
     const [question, setQuestion] = useState('');
     const [loading, setLoading] = useState(false);
